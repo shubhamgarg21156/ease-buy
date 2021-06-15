@@ -1,0 +1,22 @@
+.navbar {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  background-color: white; }
+  .navbar ul {
+    list-style-type: none; }
+    .navbar ul li {
+      display: inline-block;
+      padding-right: 15px;
+      cursor: pointer; }
+      .navbar ul li a {
+        text-decoration: none;
+        color: #111111;
+        font-family: Montserrat , sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        font-style: normal;
+        letter-spacing: 3px; }

@@ -1,0 +1,92 @@
+.header-section{
+    width:100vw;
+    height: 100vh;
+    background-image: url("https://images.unsplash.com/photo-1485125639709-a60c3a500bf1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    background-position:center ;
+}
+
+.featured-products-div{
+
+    height : 900px;
+    margin-top:60px;
+
+    .featured-text{
+
+        padding:40px;
+        text-align: center;
+
+        span{
+            font-style: normal;
+            font-size: 25px;
+            color:black;
+            font-family: sans-serif;
+            text-transform:uppercase;
+            letter-spacing: 4px;
+        }
+        
+    }
+    .products{
+        height:auto;
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin : 0px 60px;
+
+        .product{
+
+            .image{
+
+                height:400px;
+                width:400px;
+                background-color: #F5F5F5;
+
+                img{
+
+                    height:100%;
+
+                }
+            }
+
+            .product-info{
+
+                text-align: center;
+                color:#212121;
+                font-family: sans-serif;
+                font-style: normal;
+                font-weight: 100;
+                margin : 30px;
+
+                .name{
+                    font-size: 16px;
+                    letter-spacing: 2px;
+                }
+
+                .price{
+                    padding : 10px;
+                   
+                    font-size: 14px;
+                }
+
+                .color{
+                    display: inline-block;
+                    position: absolute;
+                    height:20px;
+                    width:20px;
+                    border-radius: 50%;
+                    background-color: #1B8185;
+                    transition: 0.5s;
+                }
+
+                .color:hover{
+
+                    height:30px;
+                    width:30px;
+                    
+                }
+            }
+        }
+    }
+
+}
