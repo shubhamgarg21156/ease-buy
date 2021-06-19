@@ -4,3 +4,11 @@ module.exports.home = (req,res) => {
         title : 'Home Page'
     });
 }
+
+module.exports.login = (req,res) => {
+    res.render('login',{
+        title : 'Login'
+    });
+}
+
+
