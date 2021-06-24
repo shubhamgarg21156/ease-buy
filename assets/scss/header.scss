@@ -1,15 +1,18 @@
 .navbar{
     height: 80px;
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items : center;
     position: sticky;
     top:0px;
-    background-color: white;
+    width:100%;
+    z-index:1000;
+    background-color: #F8F9FA;
 
     ul{
 
         list-style-type: none;
+        cursor : pointer;
 
         li{
 
@@ -21,14 +24,16 @@
 
                     text-decoration: none;  
                     color:#111111;
-                    font-family : Poppins, sans-serif;
-                    font-weight: 400;
+                    font-weight: 700;
                     font-size : 14px;
                     font-style: normal;
                     
                     letter-spacing: 3px;
 
                     
+            }
+            a:hover{
+                color:var(--primary-color);
             }
         }
     }
