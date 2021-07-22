@@ -1,0 +1,26 @@
+.navbar {
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  z-index: 1000;
+  background-color: #F8F9FA; }
+  .navbar ul {
+    list-style-type: none;
+    cursor: pointer; }
+    .navbar ul li {
+      display: inline-block;
+      padding-right: 15px;
+      cursor: pointer; }
+      .navbar ul li a {
+        text-decoration: none;
+        color: #111111;
+        font-weight: 700;
+        font-size: 14px;
+        font-style: normal;
+        letter-spacing: 3px; }
+      .navbar ul li a:hover {
+        color: var(--primary-color) !important; }
