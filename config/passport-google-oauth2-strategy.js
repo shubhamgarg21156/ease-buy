@@ -3,6 +3,7 @@ const googleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 const crypto = require('crypto');
 const User = require('../models/User');
+const Cart = require('../models/Cart');
 const environment = require('./environment');
 passport.use(new googleStrategy({
 
@@ -25,10 +26,16 @@ passport.use(new googleStrategy({
                     email : profile.emails[0].value,
                     name:profile.displayName,
                     password:crypto.randomBytes(20).toString('hex')
-                }, (err,user) => {
+                }, async (err,user) => {
                     if(err){console.log(`${err}`);return;}
 
-                    return done(null,user);
+                    let cart = await  Cart.create({user : user});
+
+                    let finaluser = await User.findByIdAndUpdate(user._id,{cart:cart});
+                    
+                    console.log("User created");
+                    
+                    return done(null,finaluser);
                 }
                 )
             }

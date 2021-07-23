@@ -7,6 +7,8 @@ const expressLayouts = require('express-ejs-layouts');
 const sassMiddleware = require('node-sass-middleware');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
+const flash = require('connect-flash');
+const customMware = require('./config/middleware');
 
 // ----- Passport Configuration ---- //
 const passport = require('passport');
@@ -23,7 +25,7 @@ app.use(express.static('./assets/'));
 app.use(expressLayouts);
 
 // -- Middleware for parsing data ----- //
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 // ----- Sass Middleware Configuration ---- //
 app.use(sassMiddleware({
@@ -45,7 +47,8 @@ app.use(session({
     },
     store: MongoStore.create({
         mongoUrl : db._connectionString,
-        mongoOptions : {}
+        mongoOptions : {},
+        useNewUrlParser: true
     })
 }));
 
@@ -53,6 +56,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
+
+// ---- Flash middleware ---- //
+app.use(flash());
+app.use(customMware.setFlash);
 
 
 app.set('layout extractStyles',true);

@@ -10,13 +10,16 @@
     <!----- CSS file Link ----->
     <link rel="stylesheet" href="/css/layout.css">
    
-    
+    <!---- Noty.js CDN  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+  
     <title>Ease-Buy</title>
     <%- style %>
 </head>
 <body>
     <%- include('_header') %> 
 
+    
     <%- body %>
 
 
@@ -24,6 +27,32 @@
     <script type="text/javascript" src="/Javascript/jquery-3.4.1.min.js"></script>
     <!-- for Slider -->
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <!---- For Noty ---->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+
+    <script>
+       <% if(flash.success && flash.success.length>0){ %>
+            new Noty({
+                theme:"relax",
+                timeout:'1500',
+                text:'<%= flash.success %>',
+                type:'success',
+                layout:'topRight'
+            }).show();
+       <% } %>
+
+       <% if(flash.error && flash.error.length>0){ %>
+            new Noty({
+                theme:"relax",
+                timeout:'1500',
+                text:'<%= flash.error %>',
+                type:'error',
+                layout:'topRight'
+            }).show();
+       <% } %>
+
+    </script>
     <%- script %>
     </body>
 </html>

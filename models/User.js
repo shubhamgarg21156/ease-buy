@@ -20,6 +20,10 @@ const UserSchema = new mongoose.Schema({
           resetLink: {
             type: String,
             default: ''
+          },
+          cart : {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'Cart',
           }
     
 },{timestamps:true});
