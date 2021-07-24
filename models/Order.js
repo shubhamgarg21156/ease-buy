@@ -3,15 +3,17 @@ const mongoose = require('mongoose');
 const OrderSchema = new mongoose.Schema({
           product : {
             type : mongoose.Schema.Types.ObjectId,
-            ref : "Product"
+            ref : "Product",
+            required:true
           },
           quantity : {
-              type : int,
+              type : String,
               required : true
           },
           user : {
               type : mongoose.Schema.Types.ObjectId,
-              ref : 'User'
+              ref : 'User',
+              required:true
           }  
 },{timestamps:true});
 
