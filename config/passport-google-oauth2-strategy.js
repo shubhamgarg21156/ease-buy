@@ -6,6 +6,7 @@ const User = require('../models/User');
 const Cart = require('../models/Cart');
 const environment = require('./environment');
 passport.use(new googleStrategy({
+   
 
     clientID: process.env.google_clientID,
     clientSecret : process.env.google_clientSecret,
