@@ -11,7 +11,6 @@ const ProductSchema = new mongoose.Schema({
           },
           zoomedimage : {
                type:String,
-               required:true
           },
           description: {
             type:String
@@ -25,8 +24,7 @@ const ProductSchema = new mongoose.Schema({
               required : true
           },
           ratings : {
-              type:String,
-              required:true
+              type:String
           },
           saleprice : {
               type:String,

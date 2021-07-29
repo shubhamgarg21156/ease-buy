@@ -12,83 +12,61 @@
 
 
 <body>
+  <!-- <%console.log(orders)%> -->
+  <% var price = 0;%>
   <h2 class="cart-heading">Shopping-cart<i class="fas fa-shopping-cart"></i></h2>
 
+  <% if(orders.length==0){ %>
+    
+    <h1 class="cart-heading">Your Cart is Empty</h1>
+    
+  <% }else {%>
   <div class="container">
     <!-- left side  -->
     <div class="left-container">
       <!-- first product -->
-      <div class="product-card">
-        <div class="image">
-          <img class="cart-img" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg"
-            alt="Sample">
 
-        </div>
-        <div class="detail">
-          <div class="product-detail">
-            <h3>Blue denim shirt</h3>
-            <p>Price : 500 </p>
-            <p>Discount : 50%</p>
-            
-            <p class="like-btn"><i class="fas fa-heart"></i> MOVE TO WISH LIST </p>
-            
+
+      <% for(let i=0;i<orders.length;i++) { price+=Number(orders[i].product.price) %>
+        
+        <div class="product-card">
+          <div class="image">
+            <img class="cart-img" src="<%=orders[i].product.image%>"
+              alt="Sample">
+  
+          </div>
+          <div class="detail">
+            <div class="product-detail">
+              <h3><%=orders[i].product.name%></h3>
+              <p>Price : ₹<%=orders[i].product.price%></p>
+              <p>Discount : 50%</p>
+              
+              <p class="like-btn"><i class="fas fa-heart"></i> MOVE TO WISH LIST </p>
+              
+            </div>
+          </div>
+  
+  
+          <div class="product-quantity">
+            <div class="quantity-detail">
+              <button  class="minus-btn"> <i class="fas fa-minus"></i> </button>
+              <input id="textbox" class="quantity" min="1" name="quantity" value="<%=orders[i].quantity%>" type="text">
+  
+              <button class="plus-btn" > <i class="fas fa-plus"></i></button>
+  
+            </div>
+  
+            <div class="remove">
+              <button><a href="/removeItem/?id=<%= orders[i]._id%>"><i class="fas fa-trash-alt mr-1"></i>
+                Remove Item </a></button>
+            </div>
+  
           </div>
         </div>
 
 
-        <div class="product-quantity">
-          <div class="quantity-detail">
-            <button  class="minus-btn"> <i class="fas fa-minus"></i> </button>
-            <input id="textbox" class="quantity" min="1" name="quantity" value="1" type="text">
-
-            <button class="plus-btn" > <i class="fas fa-plus"></i></button>
-
-          </div>
-
-          <div class="remove">
-            <button><i class="fas fa-trash-alt mr-1"></i>
-              Remove Item</button>
-          </div>
-
-        </div>
-      </div>
-      
-      <div class="product-card">
-        <div class="image">
-          <img class="cart-img" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg"
-            alt="Sample">
-
-        </div>
-        <div class="detail">
-          <div class="product-detail">
-            <h3>Blue denim shirt</h3>
-            <p>Price: 800 </p>
-            <p>Discount : 50%</p>
-            <p class="like-btn"><i class="fas fa-heart"></i> MOVE TO WISH LIST </p>
-            
-          </div>
-        </div>
-
-        <div class="product-quantity">
-          <div class="quantity-detail">
-            <button  class="minus-btn"> <i class="fas fa-minus"></i> </button>
-            <input id="textbox" class="quantity" min="1" name="quantity" value="1" type="text">
-
-            <button class="plus-btn" > <i class="fas fa-plus"></i></button>
-
-          </div>
-
-
-          <div class="remove">
-            <button><i class="fas fa-trash-alt mr-1"></i>
-              Remove Item</button>
-          </div>
-
-
-        </div>
-      </div>
-
-
+      <% }%>
+    
 
     </div>
     <div class="cart-total">
@@ -97,7 +75,7 @@
 
         <span>Total Price</span>
 
-        <span>₹ 3,000</span>
+        <span>₹ <%= price %></span>
 
       </p>
 
@@ -123,6 +101,8 @@
 
 
   </div>
+
+  <% } %>
 
   <!-- javascript -->
 <script src="/Javascript/cart.js"></script>
