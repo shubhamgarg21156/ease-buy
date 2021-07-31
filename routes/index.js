@@ -18,11 +18,8 @@ router.get('/product',itemController.openProduct);
 router.get('/categories',itemController.categories);
 router.get('/admin',adminController.admin);
 router.post('/admin/addtodb',adminController.addtodb);
-<<<<<<< HEAD
-=======
 router.get('/faq',faqController.faq);
 
->>>>>>> 2ab914240b383af81cd769943e475a11d3a32912
 // ------ Route for Auth ---- // 
 router.use('/auth',require('./auth'));
 
