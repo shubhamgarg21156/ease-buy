@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const homeController = require('../controllers/home_controller');
+const faqController = require('../controllers/faq_controller');
 const authController = require('../controllers/authController');
 const itemController = require('../controllers/Item_controller');
 const cartController = require('../controllers/cart_controller');
@@ -17,6 +18,7 @@ router.get('/product',itemController.openProduct);
 router.get('/categories',itemController.categories);
 router.get('/admin',adminController.admin);
 router.post('/admin/addtodb',adminController.addtodb);
+router.get('/faq',faqController.faq);
 
 // ------ Route for Auth ---- // 
 router.use('/auth',require('./auth'));
