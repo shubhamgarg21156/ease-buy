@@ -21,6 +21,9 @@ const UserSchema = new mongoose.Schema({
             type: String,
             default: ''
           },
+          randomString : {
+            type:String,
+          },
           cart : {
             type:mongoose.Schema.Types.ObjectId,
             ref:'Cart',

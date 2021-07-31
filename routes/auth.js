@@ -17,6 +17,9 @@ router.post('/login',passport.authenticate('local',
 // ---- Sign-up Post Handle ---- //    
 router.post('/create',authController.create);
 
+// ---- Email Verification -----//
+router.get('/verify/:uniqueString',authController.verifyemail);
+
 //---- Route for Logout ---- //
 router.get('/logout',authController.logout);
 

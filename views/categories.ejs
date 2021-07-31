@@ -277,12 +277,12 @@
 
             <div class="text-muted small text-uppercase mb-5">
 
-              <p class="mb-3"><a href="#!" class="card-link-secondary">Dresses</a></p>
-              <p class="mb-3"><a href="#!" class="card-link-secondary">Shirts</a></p>
-              <p class="mb-3"><a href="#!" class="card-link-secondary">Jeans</a></p>
-              <p class="mb-3"><a href="#!" class="card-link-secondary">Shoes</a></p>
-              <p class="mb-3"><a href="#!" class="card-link-secondary">Accessories</a></p>
-              <p class="mb-3"><a href="#!" class="card-link-secondary">Jewelry</a></p>
+              <p class="mb-3"><a href="/categories/?type=dresses" class="card-link-secondary">Dresses</a></p>
+              <p class="mb-3"><a href="/categories/?type=shirts" class="card-link-secondary">Shirts</a></p>
+              <p class="mb-3"><a href="/categories/?type=jeans" class="card-link-secondary">Jeans</a></p>
+              <p class="mb-3"><a href="/categories/?type=shoes" class="card-link-secondary">Shoes</a></p>
+              <p class="mb-3"><a href="/categories/?type=accesories" class="card-link-secondary">Accessories</a></p>
+              <p class="mb-3"><a href="/categories/?type=jewellery" class="card-link-secondary">Jewelerry</a></p>
             </div>
 
           </section>
@@ -360,6 +360,7 @@
             <!-- Grid row -->
             <div class="row mb-4">
 
+              <% for(let i = 0; i<product.length; i++){%>
               <!-- Grid column -->
               <div class="col-md-6 col-lg-4 mb-4">
 
@@ -367,17 +368,17 @@
                 <div class="">
 
                   <div class="view zoom z-depth-2 rounded">
-                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(58).jpg" alt="Sample">
-                    <a href="#!">
+                    <img class="img-fluid w-100" src="<%= product[i].image%>" alt="Sample">
+                    <a href="/product/?id=<%= product[i]._id%>">
                       <div class="mask"></div>
                     </a>
                   </div>
 
                   <div class="text-center pt-4">
 
-                    <h5>Round mirror</h5>
-                    <h6 class="mb-3">$ 55.00</h6>
-                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
+                    <h5><%= product[i].name%></h5>
+                    <h6 class="mb-3">₹ <%= product[i].price%></h6>
+                    <a href="/addtocart/?id=<%=product[i]._id %>"><button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button></a>
                     <button type="button" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
                       data-placement="top" title="Add to wishlist"><i class="far fa-heart"></i></button>
 
@@ -389,325 +390,7 @@
               </div>
               <!-- Grid column -->
 
-              <!-- Grid column -->
-              <div class="col-md-6 col-lg-4 mb-4">
-
-                <!-- Card -->
-                <div class="">
-
-                  <div class="view zoom z-depth-2 rounded">
-                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(59).jpg" alt="Sample">
-                    <a href="#!">
-                      <div class="mask"></div>
-                    </a>
-                  </div>
-
-                  <div class="text-center pt-4">
-
-                    <h5>Small wicker basket</h5>
-                    <h6 class="mb-3">$ 9.00</h6>
-                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                    <button type="button" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
-                      data-placement="top" title="Add to wishlist"><i class="far fa-heart"></i></button>
-
-                  </div>
-
-                </div>
-                <!-- Card -->
-
-              </div>
-              <!-- Grid column -->
-
-              <!-- Grid column -->
-              <div class="col-md-6 col-lg-4 mb-4">
-
-                <!-- Card -->
-                <div class="">
-
-                  <div class="view zoom z-depth-2 rounded">
-                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(60).jpg" alt="Sample">
-                    <a href="#!">
-                      <div class="mask"></div>
-                    </a>
-                  </div>
-
-                  <div class="text-center pt-4">
-
-                    <h5>Ceramic hare</h5>
-                    <h6 class="mb-3">$ 29.00</h6>
-                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                    <button type="button" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
-                      data-placement="top" title="Add to wishlist"><i class="far fa-heart"></i></button>
-
-                  </div>
-
-                </div>
-                <!-- Card -->
-
-              </div>
-              <!-- Grid column -->
-
-              <!-- Grid column -->
-              <div class="col-md-6 col-lg-4 mb-4">
-
-                <!-- Card -->
-                <div class="">
-
-                  <div class="view zoom z-depth-2 rounded">
-                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(61).jpg" alt="Sample">
-                    <a href="#!">
-                      <div class="mask"></div>
-                    </a>
-                  </div>
-
-                  <div class="text-center pt-4">
-
-                    <h5>Palm leaf</h5>
-                    <h6 class="mb-3">$ 13.00</h6>
-                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                    <button type="button" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
-                      data-placement="top" title="Add to wishlist"><i class="far fa-heart"></i></button>
-
-                  </div>
-
-                </div>
-                <!-- Card -->
-
-              </div>
-              <!-- Grid column -->
-              
-              <!-- Grid column -->
-              <div class="col-md-6 col-lg-4 mb-4">
-
-                <!-- Card -->
-                <div class="">
-
-                  <div class="view zoom z-depth-2 rounded">
-                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(62).jpg" alt="Sample">
-                    <a href="#!">
-                      <div class="mask"></div>
-                    </a>
-                  </div>
-
-                  <div class="text-center pt-4">
-
-                    <h5>5 ceramic eggs</h5>
-                    <h6 class="mb-3">$ 25.00</h6>
-                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                    <button type="button" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
-                      data-placement="top" title="Add to wishlist"><i class="far fa-heart"></i></button>
-
-                  </div>
-
-                </div>
-                <!-- Card -->
-
-              </div>
-              <!-- Grid column -->
-
-              <!-- Grid column -->
-              <div class="col-md-6 col-lg-4 mb-4">
-
-                <!-- Card -->
-                <div class="">
-
-                  <div class="view zoom z-depth-2 rounded">
-                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(63).jpg" alt="Sample">
-                    <a href="#!">
-                      <div class="mask"></div>
-                    </a>
-                  </div>
-
-                  <div class="text-center pt-4">
-
-                    <h5>Flat eagrass basket</h5>
-                    <h6 class="mb-3">$ 20.00</h6>
-                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                    <button type="button" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
-                      data-placement="top" title="Add to wishlist"><i class="far fa-heart"></i></button>
-
-                  </div>
-
-                </div>
-                <!-- Card -->
-
-              </div>
-              <!-- Grid column -->
-
-              <!-- Grid column -->
-              <div class="col-md-6 col-lg-4 mb-4">
-
-                <!-- Card -->
-                <div class="">
-
-                  <div class="view zoom z-depth-2 rounded">
-                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(64).jpg" alt="Sample">
-                    <a href="#!">
-                      <div class="mask"></div>
-                    </a>
-                  </div>
-
-                  <div class="text-center pt-4">
-
-                    <h5>Set of two vases</h5>
-                    <h6 class="mb-3">$ 45.00</h6>
-                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                    <button type="button" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
-                      data-placement="top" title="Add to wishlist"><i class="far fa-heart"></i></button>
-
-                  </div>
-
-                </div>
-                <!-- Card -->
-
-              </div>
-              <!-- Grid column -->
-              
-              <!-- Grid column -->
-              <div class="col-md-6 col-lg-4 mb-4">
-
-                <!-- Card -->
-                <div class="">
-
-                  <div class="view zoom z-depth-2 rounded">
-                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(65).jpg" alt="Sample">
-                    <a href="#!">
-                      <div class="mask"></div>
-                    </a>
-                  </div>
-
-                  <div class="text-center pt-4">
-
-                    <h5>Stoneware pot - L</h5>
-                    <h6 class="mb-3">$ 30.00</h6>
-                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                    <button type="button" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
-                      data-placement="top" title="Add to wishlist"><i class="far fa-heart"></i></button>
-
-                  </div>
-
-                </div>
-                <!-- Card -->
-
-              </div>
-              <!-- Grid column -->
-
-              <!-- Grid column -->
-              <div class="col-md-6 col-lg-4 mb-4">
-
-                <!-- Card -->
-                <div class="">
-
-                  <div class="view zoom z-depth-2 rounded">
-                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(66).jpg" alt="Sample">
-                    <a href="#!">
-                      <div class="mask"></div>
-                    </a>
-                  </div>
-
-                  <div class="text-center pt-4">
-
-                    <h5>Seagrass basket - M</h5>
-                    <h6 class="mb-3">$ 23.00</h6>
-                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                    <button type="button" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
-                      data-placement="top" title="Add to wishlist"><i class="far fa-heart"></i></button>
-
-                  </div>
-
-                </div>
-                <!-- Card -->
-
-              </div>
-              <!-- Grid column -->
-
-              <!-- Grid column -->
-              <div class="col-md-6 col-lg-4 mb-4">
-
-                <!-- Card -->
-                <div class="">
-
-                  <div class="view zoom z-depth-2 rounded">
-                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(67).jpg" alt="Sample">
-                    <a href="#!">
-                      <div class="mask"></div>
-                    </a>
-                  </div>
-
-                  <div class="text-center pt-4">
-
-                    <h5>Set of 4 ceramic cups</h5>
-                    <h6 class="mb-3">$ 39.00</h6>
-                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                    <button type="button" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
-                      data-placement="top" title="Add to wishlist"><i class="far fa-heart"></i></button>
-
-                  </div>
-
-                </div>
-                <!-- Card -->
-
-              </div>
-              <!-- Grid column -->
-
-              <!-- Grid column -->
-              <div class="col-md-6 col-lg-4 mb-4">
-
-                <!-- Card -->
-                <div class="">
-
-                  <div class="view zoom z-depth-2 rounded">
-                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(68).jpg" alt="Sample">
-                    <a href="#!">
-                      <div class="mask"></div>
-                    </a>
-                  </div>
-
-                  <div class="text-center pt-4">
-
-                    <h5>White dessert plate</h5>
-                    <h6 class="mb-3">$ 15.00</h6>
-                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                    <button type="button" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
-                      data-placement="top" title="Add to wishlist"><i class="far fa-heart"></i></button>
-
-                  </div>
-
-                </div>
-                <!-- Card -->
-
-              </div>
-              <!-- Grid column -->
-
-              <!-- Grid column -->
-              <div class="col-md-6 col-lg-4 mb-4">
-
-                <!-- Card -->
-                <div class="">
-
-                  <div class="view zoom z-depth-2 rounded">
-                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Interior/img(10).jpg" alt="Sample">
-                    <a href="#!">
-                      <div class="mask"></div>
-                    </a>
-                  </div>
-
-                  <div class="text-center pt-4">
-
-                    <h5>Set of 3 baskets</h5>
-                    <h6 class="mb-3">$ 79.00</h6>
-                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                    <button type="button" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
-                      data-placement="top" title="Add to wishlist"><i class="far fa-heart"></i></button>
-
-                  </div>
-
-                </div>
-                <!-- Card -->
-
-              </div>
-              <!-- Grid column -->
-
+              <% } %>
             </div>
             <!-- Grid row -->
 

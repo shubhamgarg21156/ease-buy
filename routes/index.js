@@ -17,7 +17,6 @@ router.get('/product',itemController.openProduct);
 router.get('/categories',itemController.categories);
 router.get('/admin',adminController.admin);
 router.post('/admin/addtodb',adminController.addtodb);
-
 // ------ Route for Auth ---- // 
 router.use('/auth',require('./auth'));
 
