@@ -1,0 +1,156 @@
+<!-- using bootsrap accordion class  for colapsing-->
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<title>faq</title>
+
+<!-- <body style="padding: 10px; background: rgb(241, 248, 146);" > -->
+  <body>
+
+  <h2 style="text-align: center;  margin:10px;  padding: 10px; background: rgb(3, 3, 3); color: white; border-radius: 10px;"> Frequentely Asked Question </h2>
+  <div id="accordion" >
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+            aria-controls="collapseOne">
+            #1 Does EasyBuy read my SMSes?
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+          EaseBuy can only read OTP SMSes that are sent by EaseBuy. This is in accordance with guidelines provided by
+          Google and Apple in line with user privacy policies.
+        </div>
+      </div>
+    </div>
+  
+    
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+          aria-controls="collapseTwo">
+          #2 How do I create a Return Request?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+        You can create a Return in three simple steps
+        <ol class="ml-5">
+          <li>Tap on MyOrders</li>
+          <li> Choose the item to be Returned</li>
+          <li>Enter details requested and create a return request</li>
+        </ol>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+          aria-expanded="false" aria-controls="collapseThree">
+          #3 How do I cancel the order, I have placed?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        Order can be canceled till the same is out for delivery. Note: This may not be applicable for certain
+        logistics partner. You would see an option to cancel within 'My Orders' section under the main menu of your
+        App/Website/M-site then select the item or order you want to cancel. In case you are unable to cancel the
+        order from'My Orders' section, you can refuse it at the time of delivery and refund will be processed into the
+        source account, if order amount was paid online.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <div class="card">
+    <div class="card-header" id="headingFour">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+          aria-controls="collapseFour">
+          #4 How are orders placed on EaseBuy delivered to me?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+      <div class="card-body">
+        All orders placed on EaseBuy are dispatched through our own courier service - through courier partners such as
+        Blue Dart, Delhivery Etc.
+
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingFive">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
+          aria-controls="collapseFive">
+          #5 Does EaseBuy deliver products outside India?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+      <div class="card-body">
+        No. At this point, EaseBuy delivers products only within India.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingSix">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
+          aria-controls="collapseSix">
+          #6 How will I detect fraudulent emails/calls seeking sensitive personal and confidential information?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+      <div class="card-body">
+     <p>  If you receive an e-mail, a call from a person/association claiming to be from EaseBuy seeking sensitive
+        confidential information like debit/credit card PIN, net-banking or mobile banking password, we request you to
+        never provide such confidential and personal data. We at EaseBuy or our affiliate logistics partner never ask
+        for such confidential and personal data. If you have already revealed such information, report it immediately
+        to an appropriate law enforcement agency.</p> 
+
+      <p>  Here are a couple of baits fraudsters often use to cheat consumers:</p> 
+
+
+    <p>  Congratulations! You have been nominated as a ‘Top customer’ and are now eligible for a luxury gift
+        item. Please share your proof of address and your debit/credit card details to avail this great offer.</p> 
+
+      <p> 
+        Hi, I’m calling from EaseBuy. We are happy to let you know that you have won an exclusive lucky draw coupon of
+        Rs. 5000 on your latest purchase. Please share your credit/debit card number so we can credit the money
+        directly into your bank account.ter details requested and create a return request. </p> 
+        
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
