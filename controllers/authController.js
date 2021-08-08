@@ -1,6 +1,19 @@
 const User = require('../models/User');
 const Cart = require('../models/Cart');
 const passport = require('../config/passport-local-strategy');
+const authMailer = require('../mailers/auth_mailer');
+
+// Funciton to create Creating random String to verify email //
+const randString = () => {
+    const len = 8;
+    let randStr = ''
+    for(let i=0;i<len;i++){
+        const ch = Math.floor((Math.random() * 10 ) + 1);
+        randStr +=ch;
+    }
+    return randStr;
+}
+
 // ---- Login Page Handle ---- //
 module.exports.login = (req,res) => {
     if(req.isAuthenticated()){
@@ -36,20 +49,31 @@ try{
         if(err){console.log(`${err},Error in finding the user while signing up`);return res.redirect('back')};
 
         if(olduser){
-            req.flash('error',"User already exists");
-            console.log("User already exists");
-            return res.redirect('back');
+            if(olduser.verified){
+                req.flash('error',"User already exists..Please Login");
+                console.log("User already exists");
+                return res.redirect('back');
+            }
+            else{
+                req.flash('success','Please Verify your Email');
+                return res.redirect('back');
+            }
         }
 
         let user = await User.create(req.body);
 
         let cart = await  Cart.create({user : user});
 
-        let finaluser = await User.findByIdAndUpdate(user._id,{cart:cart});
+        let randomString = await randString();
+
+        let finaluser = await User.findByIdAndUpdate(user._id,{cart:cart, randomString : randomString});
+
+
+        await authMailer.sendMail(email , randomString);
           
+        req.flash('success','A Verification link has been sent to your mail');
         console.log("User created");
         
-        req.flash('success','Successfully Registered.. Now Login In');
         return res.redirect('back');
         
     })
@@ -59,9 +83,29 @@ try{
     console.log(`${err}`);
 
 }
-   
-    
 }
+
+
+//----- Verifying the Email -----//
+module.exports.verifyemail = async (req,res) => {
+
+    const {uniqueString} = req.params;
+
+    const user = await User.findOne({randomString : uniqueString});
+
+    if(user){
+        user.verified = true;
+        await user.save();
+
+        req.flash('success','Email has been verified');
+
+        res.json('Your account has been verified..');
+    }
+    else{
+        res.json("User not found");
+    }
+}
+
 
 // ---- Logout Handle ---- //
 module.exports.logout = (req,res) => {

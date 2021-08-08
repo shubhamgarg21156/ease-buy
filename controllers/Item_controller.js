@@ -98,7 +98,8 @@ module.exports.removeItem = (req,res) => {
 
 module.exports.openProduct = (req,res) => {
 
-    Product.findOne(req.query.id, (err,product) => {
+    Product.findOne({_id : req.query.id}, (err,product) => {
+        
         res.render('product' , {
             product : product
         });
@@ -106,5 +107,18 @@ module.exports.openProduct = (req,res) => {
     
 }
 module.exports.categories = (req,res) => {
-    res.render('categories');
+    Product.find({category : req.query.type}, (err,product) => {
+
+        if(err){
+            req.flash('error','Some error occured');
+            console.log('Error in loading categories page');
+            return res.redirect('back');
+        }
+
+        return res.render('categories' , {
+            product : product
+        });
+
+    })
+    
 }
