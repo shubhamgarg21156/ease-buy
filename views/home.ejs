@@ -60,7 +60,7 @@
     </div> 
 
 
-<div class="featured-products-div">
+<!-- <div class="featured-products-div">
     <div class="featured-text">
         <span>Featured Products</span>
     </div>
@@ -152,7 +152,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <div class="skin-light">
@@ -161,7 +161,7 @@
     <div class="container">
 
       <!--Section: Block Content-->
-      <section>
+      <section id="categories">
 
         <h4 class="text-center my-5"><strong>Categories</strong></h4>
 
@@ -334,11 +334,11 @@
 
               <div class="view zoom overlay">
                 <img class="img-fluid w-100"
-                  src="<%= locals.products[0].image%>" alt="Sample">
+                  src="<%= newproducts[2].image%>" alt="Sample">
                 <a href="#!">
                   <div class="mask">
                     <img class="img-fluid w-100"
-                      src="<%= locals.products[0].zoomedimage%>">
+                      src="<%= newproducts[2].zoomedimage%>">
                     <div class="mask rgba-black-slight"></div>
                   </div>
                 </a>
@@ -346,8 +346,8 @@
 
               <div class="card-body text-center pt-4">
 
-                <h5><%= locals.products[0].name%></h5>
-                <p class="mb-2 text-muted text-uppercase small">Shirts</p>
+                <h5><%= newproducts[2].name%></h5>
+                <p class="mb-2 text-muted text-uppercase small"><%newproducts[2].category%></p>
                 <ul class="rating">
                   <li>
                     <i class="fas fa-star fa-sm text-primary"></i>
@@ -366,16 +366,16 @@
                   </li>
                 </ul>
                 <hr>
-                <p><span class="mr-1"><strong><%= locals.products[0].price%></strong></span></p>
+                <p><span class="mr-1"><strong>₹ <%= newproducts[2].price %></strong></span></p>
                 <button type="button" class="btn btn-primary btn-sm mr-1 mb-2"><i
-                    class="fas fa-shopping-cart pr-2"></i><a href="/addtocart/?id=<%= locals.products[0]._id %>" class="text-white">
-                      Add to cart
-                    </a></button>
-                <button type="button" class="btn btn-light btn-sm mr-1 mb-2"><i
-                    class="fas fa-info-circle pr-2"></i><a href="/product/?id=<%=products[0]._id%>">Details</a></button>
-                <button type="button" class="btn btn-danger btn-sm px-3 mb-2 material-tooltip-main"
-                  data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i
-                    class="far fa-heart"></i></button>
+                  class="fas fa-shopping-cart pr-2"></i><a href="/addtocart/?id=<%= newproducts[2]._id %>" class="text-white">
+                    Add to cart
+                  </a></button>
+              <button type="button" class="btn btn-light btn-sm mr-1 mb-2"><i
+                  class="fas fa-info-circle pr-2"></i><a href="/product/?id=<%=newproducts[2]._id%>">Details</a></button>
+              <button type="button" class="btn btn-danger btn-sm px-3 mb-2 material-tooltip-main"
+                data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i
+                  class="far fa-heart"></i></button>
                     
               </div>
 
@@ -449,12 +449,12 @@
 
               <div class="view zoom overlay">
                 <img class="img-fluid w-100"
-                  src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14a.jpg" alt="Sample">
+                  src="<%= newproducts[1].image %>" alt="Sample">
                 <h4 class="mb-0"><span class="badge badge-primary badge-pill badge-news">Sale</span></h4>
                 <a href="#!">
                   <div class="mask">
                     <img class="img-fluid w-100"
-                      src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14.jpg">
+                      src="<%= newproducts[1].zoomedimage %>">
                     <div class="mask rgba-black-slight"></div>
                   </div>
                 </a>
@@ -462,8 +462,8 @@
 
               <div class="card-body text-center pt-4">
 
-                <h5>Grey sweater</h5>
-                <p class="mb-2 text-muted text-uppercase small">Sweaters</p>
+                <h5><%= newproducts[1].name %></h5>
+                <p class="mb-2 text-muted text-uppercase small"><%= newproducts[1].category%></p>
                 <ul class="rating">
                   <li>
                     <i class="fas fa-star fa-sm text-primary"></i>
@@ -482,13 +482,15 @@
                   </li>
                 </ul>
                 <hr>
-                <p><span class="text-danger mr-1"><strong>$21.99</strong></span><span
-                    class="text-grey"><strong><s>$36.99</s></strong></span></p>
-                <button type="button" class="btn btn-primary btn-sm mr-1 mb-2"><i
-                    class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                <button type="button" class="btn btn-light btn-sm mr-1 mb-2"><i
-                    class="fas fa-info-circle pr-2"></i>Details</button>
-                <button type="button" class="btn btn-danger btn-sm px-3 mb-2 material-tooltip-main"
+                <p><span class="text-danger mr-1"><strong>₹ <%= newproducts[1].saleprice %></strong></span><span
+                  class="text-grey"><strong><s>₹ <%= newproducts[1].price %></s></strong></span></p>
+              <button type="button" class="btn btn-primary btn-sm mr-1 mb-2"><i
+                    class="fas fa-shopping-cart pr-2"></i><a href="/addtocart/?id=<%= newproducts[1]._id %>" class="text-white">
+                      Add to cart
+                    </a></button>
+              <button type="button" class="btn btn-light btn-sm mr-1 mb-2"><i
+                    class="fas fa-info-circle pr-2"></i><a href="/product/?id=<%= newproducts[1]._id%>">Details</a></button>
+              <button type="button" class="btn btn-danger btn-sm px-3 mb-2 material-tooltip-main"
                   data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i
                     class="far fa-heart"></i></button>
 
@@ -522,11 +524,11 @@
 
               <div class="view zoom overlay">
                 <img class="img-fluid w-100"
-                  src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg" alt="Sample">
+                  src="<%= newproducts[0].image %>" alt="Sample">
                 <a href="#!">
                   <div class="mask">
                     <img class="img-fluid w-100"
-                      src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15.jpg">
+                      src="<%= newproducts[0].zoomedimage %>">
                     <div class="mask rgba-black-slight"></div>
                   </div>
                 </a>
@@ -534,8 +536,8 @@
 
               <div class="card-body text-center pt-4">
 
-                <h5>Black denim jacket</h5>
-                <p class="mb-2 text-muted text-uppercase small">Jackets</p>
+                <h5><%= newproducts[0].name %></h5>
+                <p class="mb-2 text-muted text-uppercase small"><%= newproducts[0].category %></p>
                 <ul class="rating">
                   <li>
                     <i class="fas fa-star fa-sm text-primary"></i>
@@ -554,14 +556,16 @@
                   </li>
                 </ul>
                 <hr>
-                <p><span class="mr-1"><strong>$99.99</strong></span></p>
+                <p><span class="mr-1"><strong>₹ <%= newproducts[0].price %></strong></span></p>
                 <button type="button" class="btn btn-primary btn-sm mr-1 mb-2"><i
-                    class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                <button type="button" class="btn btn-light btn-sm mr-1 mb-2"><i
-                    class="fas fa-info-circle pr-2"></i>Details</button>
-                <button type="button" class="btn btn-danger btn-sm px-3 mb-2 material-tooltip-main"
-                  data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i
-                    class="far fa-heart"></i></button>
+                  class="fas fa-shopping-cart pr-2"></i><a href="/addtocart/?id=<%= newproducts[0]._id %>" class="text-white">
+                    Add to cart
+                  </a></button>
+              <button type="button" class="btn btn-light btn-sm mr-1 mb-2"><i
+                  class="fas fa-info-circle pr-2"></i><a href="/product/?id=<%=newproducts[0]._id%>">Details</a></button>
+              <button type="button" class="btn btn-danger btn-sm px-3 mb-2 material-tooltip-main"
+                data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i
+                  class="far fa-heart"></i></button>
 
               </div>
 
@@ -579,12 +583,12 @@
 
               <div class="view zoom overlay">
                 <img class="img-fluid w-100"
-                  src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14a.jpg" alt="Sample">
+                  src="<%= newproducts[1].image %>" alt="Sample">
                 <h4 class="mb-0"><span class="badge badge-primary badge-pill badge-news">Sale</span></h4>
                 <a href="#!">
                   <div class="mask">
                     <img class="img-fluid w-100"
-                      src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14.jpg">
+                      src="<%= newproducts[1].zoomedimage %>">
                     <div class="mask rgba-black-slight"></div>
                   </div>
                 </a>
@@ -592,8 +596,8 @@
 
               <div class="card-body text-center pt-4">
 
-                <h5>Grey sweater</h5>
-                <p class="mb-2 text-muted text-uppercase small">Sweaters</p>
+                <h5><%= newproducts[1].name %></h5>
+                <p class="mb-2 text-muted text-uppercase small"><%= newproducts[1].category %></p>
                 <ul class="rating">
                   <li>
                     <i class="fas fa-star fa-sm text-primary"></i>
@@ -612,15 +616,17 @@
                   </li>
                 </ul>
                 <hr>
-                <p><span class="text-danger mr-1"><strong>$21.99</strong></span><span
-                    class="text-grey"><strong><s>$36.99</s></strong></span></p>
+                <p><span class="text-danger mr-1"><strong>₹ <%= newproducts[1].saleprice %></strong></span><span
+                    class="text-grey"><strong><s>₹ <%= newproducts[1].price %></s></strong></span></p>
                 <button type="button" class="btn btn-primary btn-sm mr-1 mb-2"><i
-                    class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
+                      class="fas fa-shopping-cart pr-2"></i><a href="/addtocart/?id=<%= newproducts[1]._id %>" class="text-white">
+                        Add to cart
+                      </a></button>
                 <button type="button" class="btn btn-light btn-sm mr-1 mb-2"><i
-                    class="fas fa-info-circle pr-2"></i>Details</button>
+                      class="fas fa-info-circle pr-2"></i><a href="/product/?id=<%= newproducts[1]._id%>">Details</a></button>
                 <button type="button" class="btn btn-danger btn-sm px-3 mb-2 material-tooltip-main"
-                  data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i
-                    class="far fa-heart"></i></button>
+                    data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i
+                      class="far fa-heart"></i></button>
 
               </div>
 
@@ -638,11 +644,11 @@
 
               <div class="view zoom overlay">
                 <img class="img-fluid w-100"
-                  src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg" alt="Sample">
+                  src="<%= newproducts[2].image %>" alt="Sample">
                 <a href="#!">
                   <div class="mask">
                     <img class="img-fluid w-100"
-                      src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg">
+                      src="<%= newproducts[2].zoomedimage %>">
                     <div class="mask rgba-black-slight"></div>
                   </div>
                 </a>
@@ -650,8 +656,8 @@
 
               <div class="card-body text-center pt-4">
 
-                <h5>Blue denim shirt</h5>
-                <p class="mb-2 text-muted text-uppercase small">Shirts</p>
+                <h5><%= newproducts[2].name %></h5>
+                <p class="mb-2 text-muted text-uppercase small"><%= newproducts[2].category %></p>
                 <ul class="rating">
                   <li>
                     <i class="fas fa-star fa-sm text-primary"></i>
@@ -670,14 +676,16 @@
                   </li>
                 </ul>
                 <hr>
-                <p><span class="mr-1"><strong>$17.99</strong></span></p>
+                <p><span class="mr-1"><strong>₹<%= newproducts[2].price %></strong></span></p>
                 <button type="button" class="btn btn-primary btn-sm mr-1 mb-2"><i
-                    class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
+                  class="fas fa-shopping-cart pr-2"></i><a href="/addtocart/?id=<%= newproducts[2]._id %>" class="text-white">
+                    Add to cart
+                  </a></button>
                 <button type="button" class="btn btn-light btn-sm mr-1 mb-2"><i
-                    class="fas fa-info-circle pr-2"></i>Details</button>
+                  class="fas fa-info-circle pr-2"></i><a href="/product/?id=<%= newproducts[2]._id%>">Details</a></button>
                 <button type="button" class="btn btn-danger btn-sm px-3 mb-2 material-tooltip-main"
-                  data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i
-                    class="far fa-heart"></i></button>
+                data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i
+                  class="far fa-heart"></i></button>
 
               </div>
 
@@ -763,20 +771,20 @@
           <div class="col-lg-7 col-md-12 mb-4 mb-md-0 text-center">
 
             <!-- Form -->
-            <form class="">
+            <form method="POST" action="/message" class="">
 
               <div class="md-form md-outline">
-                <input type="text" id="form-subject" class="form-control">
+                <input type="text" id="form-subject" class="form-control" name="name">
                 <label for="form-subject">Name</label>
               </div>
 
               <div class="md-form md-outline mt-3">
-                <input type="email" id="form-email" class="form-control">
+                <input type="email" id="form-email" class="form-control" name="email">
                 <label for="form-email">E-mail</label>
               </div>
 
               <div class="md-form md-outline">
-                <textarea id="form76" class="md-textarea form-control" rows="4"></textarea>
+                <textarea id="form76" class="md-textarea form-control" name="message" rows="4"></textarea>
                 <label for="form76">Your message</label>
 
               </div>
@@ -805,12 +813,12 @@
 </div>
 <!-- NewsLetter and Footer -->
     <div class="newsletter-container">
-        <form action="">
+        <form action="/subscribe" method="POST">
             <h1>Join our newsletter</h1>
             <p>Subscribe us to update with latest fashion</p>
             <div class="email">
                 <i class="fa fa-envelope"></i>
-                <input class="email-box" type="email" name="" id="" placeholder="Enter your email">
+                <input class="email-box" type="email" name="email" id="" placeholder="Enter your email">
                 <button class="email-btn">Subscribe> </button>
             </div>
         </form>

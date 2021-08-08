@@ -23,6 +23,9 @@ const ProductSchema = new mongoose.Schema({
               type : String,
               required : true
           },
+          subcategory : {
+            type : String,
+        },
           ratings : {
               type:String
           },

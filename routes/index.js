@@ -28,5 +28,9 @@ router.get('/cart',passport.checkAuthentication,cartController.cart);
 
 router.get('/checkout',checkoutController.checkout);
 
+router.post('/subscribe',homeController.subscribe);
+
+router.post('/message',homeController.message);
+
 module.exports = router;
 
