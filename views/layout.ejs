@@ -32,6 +32,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
 
     <script>
+        const chk = document.getElementById('chkbox');
+      
+      chk.addEventListener('change', () => {
+          document.body.classList.toggle('dark');
+      });
+      
+      </script>
+
+    <script>
        <% if(flash.success && flash.success.length>0){ %>
             new Noty({
                 theme:"relax",

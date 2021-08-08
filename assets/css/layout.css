@@ -1,7 +1,20 @@
 :root {
   --background-color: #FFFAFA;
   --primary-color: #FB8C00;
-  --primary-darken: #EF6C00; }
+  --primary-darken: #EF6C00;
+  --font-color:black;
+
+
+
+
+}
+
+  body.dark {
+    background: #292C35;
+    --font-color:rgb(250, 249, 249);
+    
+    
+  }
 
 body {
   margin: 0;
