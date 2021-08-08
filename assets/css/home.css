@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
+
+.font-color{
+  color: var(--font-color);
+}
+
 .navbar {
   position: fixed !important; }
 
@@ -23,7 +28,7 @@
       font-style: normal;
       font-size: 25px;
       position: relative;
-      color: black;
+      color:var(--font-color);
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 4px;
@@ -95,37 +100,36 @@
     .featured-products-div .products {
       justify-content: center; } }
 
-.newsletter-container {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 50px;
-  background-color: #fff8d9;
-  text-align: center;
-  line-height: 2rem;
-  padding: 40px; }
-  .newsletter-container .p {
-    font-size: larger;
-    font-weight: 300; }
-  .newsletter-container .email {
-    color: cornsilk;
-    height: 40px;
-    display: flex;
-    justify-content: center; }
-    .newsletter-container .email i {
-      background-color: black;
-      padding: 12px; }
-    .newsletter-container .email .email-box {
-      border: none;
-      outline: none;
-      width: 60vh;
-      padding: 12px; }
-    .newsletter-container .email .email-btn {
-      color: cornsilk;
-      background-color: black;
-      padding: 0 10px;
-      text-transform: uppercase;
-      border: none;
-      outline: none; }
-
+      .newsletter-container {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 50px;
+        background-color: #fff8d9;
+        text-align: center;
+        line-height: 2rem;
+        padding: 40px; }
+        .newsletter-container .p {
+          font-size: larger;
+          font-weight: 300; }
+        .newsletter-container .email {
+          color: cornsilk;
+          height: 40px;
+          display: flex;
+          justify-content: center; }
+          .newsletter-container .email i {
+            background-color: black;
+            padding: 12px; }
+          .newsletter-container .email .email-box {
+            border: none;
+            outline: none;
+            width: 60vh;
+            padding: 12px; }
+          .newsletter-container .email .email-btn {
+            color: cornsilk;
+            background-color: black;
+            padding: 0 10px;
+            text-transform: uppercase;
+            border: none;
+            outline: none; }
 .footer {
   background-color: black;
   color: white;
@@ -177,7 +181,22 @@
     @media (max-width: 767px) {
       .footer .footer-container .footer-col {
         width: 50%;
-        margin-bottom: 30px; } }
+        margin-bottom: 30px; }
+      
+      }
     @media (max-width: 574px) {
       .footer .footer-container .footer-col {
-        width: 100%; } }
+        width: 100%; 
+        text-align: center;
+        margin-left:10px;
+      
+      }
+      .newsletter-container{
+        margin:5px;
+        padding: 50px;
+      }
+
+     
+      
+      
+      }
