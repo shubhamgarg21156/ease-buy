@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300;1,400&display=swap');
 
 .font-color{
   color: var(--font-color);
@@ -106,10 +107,15 @@
         background-color: #fff8d9;
         text-align: center;
         line-height: 2rem;
-        padding: 40px; }
+        padding: 40px;
+        border-radius: 10px;
+       }
         .newsletter-container .p {
+          /* font-family: Roboto; */
           font-size: larger;
-          font-weight: 300; }
+          font-weight: 300; 
+
+        }
         .newsletter-container .email {
           color: cornsilk;
           height: 40px;
