@@ -7,7 +7,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     text-align: center;
-    color: rgb(51, 50, 50);
+    color: var(--font-color);
     margin: 20px;
 
 }
@@ -131,6 +131,20 @@ background-color: cornsilk;
     padding: 3px;
     border-radius: 5px;
 
+
+}
+
+.empty-cart-image{
+  
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    width: 400px;
+    background:#fff;
+    border-radius: 10px;
+   
+   
 
 }
 
