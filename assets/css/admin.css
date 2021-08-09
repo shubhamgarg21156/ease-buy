@@ -1,0 +1,9 @@
+.btn.transparent {
+    margin: 0;
+    background: none;
+    border: 2px solid rgb(48, 3, 247);
+    width: 130px;
+    height: 41px;
+    font-weight: 600;
+    font-size: 0.8rem;
+  }

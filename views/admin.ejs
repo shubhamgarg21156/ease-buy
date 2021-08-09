@@ -1,22 +1,35 @@
+
+ <!-- main css -->
+ <link rel="stylesheet" href="/css/login.css">
+
 <body>
 
-<form action="/admin/addtodb" method="POST">
+    <div class="main-div">
+
+    
+
+<form action="/admin/addtodb" method="POST">   
     <p>category</p>
+    <div class="category">
     <input type="radio" name="category" value="shirts" required>Shirts
     <input type="radio" name="category" value="dresses" required>Dresses
     <input type="radio" name="category" value="jeans" required>Jeans
     <input type="radio" name="category" value="shoes" required>Shoes
     <input type="radio" name="category" value="accesories" required>Accesories
     <input type="radio" name="category" value="jewellery" required>Jewellery</br>
-
+    </div>
+<div class="product-detail">
     <input type="text" name="name" placeholder="name" required>
     <input type="text" name="image" placeholder="image-link" required>
     <input type="text" name="zoomedimage" placeholder="zoomedimage-link">
     <input type="text" name="description" placeholder="description" required>
     <input type="text" name="price" placeholder="price" required>
     <input type="text" name="saleprice" placeholder="saleprice">
-    <input type="submit" value="submit">
+    <input type="submit" value="submit"  class="submit">
+</div>
 
 </form>
+
+</div>
 
 </body>
