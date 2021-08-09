@@ -45,6 +45,7 @@ passport.checkAuthentication = (req,res,next) =>  {
         return next();
     }
 
+    req.flash('err','Please Login first..');
     return res.redirect('/auth/login');
 
 }
