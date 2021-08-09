@@ -7,7 +7,7 @@
   top: 0px;
   width: 100%;
   z-index: 1000;
-  background-color: #F8F9FA; }
+  background-color: var(--bg-color) !important; }
   .navbar ul {
     list-style-type: none;
     cursor: pointer; }
@@ -17,7 +17,7 @@
       cursor: pointer; }
       .navbar ul li a {
         text-decoration: none;
-        color: #111111;
+        color: var(--font-color);
         font-weight: 700;
         font-size: 14px;
         font-style: normal;
