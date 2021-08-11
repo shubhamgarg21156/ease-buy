@@ -9,7 +9,8 @@ $('.like-btn').on('click', function() {
     var $this = $(this);
     var $input = $this.closest('div').find('input');
     var value = parseInt($input.val());
- 
+    var price = $('.price');
+
     if (value > 1) {
         value = value - 1;
     } else {

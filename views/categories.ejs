@@ -379,9 +379,18 @@
                     <h5><%= product[i].name%></h5>
                     <h6 class="mb-3">₹ <%= product[i].price%></h6>
                     <a href="/addtocart/?id=<%=product[i]._id %>"><button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button></a>
-                    <button type="button" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
-                      data-placement="top" title="Add to wishlist"><i class="far fa-heart"></i></button>
+                    <% if(!product[i].iswishlist){%>
 
+                      <a href="/addtowishlist/?id=<%=product[i]._id %>"><button type="button" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
+                        data-placement="top" title="Add to wishlist"><i class="far fa-heart"></i></button></a>
+
+                     <% }else{ %>
+
+                      <a href="/addtowishlist/?id=<%=product[i]._id %>"><button type="button" style="color: red;" class="btn btn-danger btn-sm px-3 material-tooltip-main" data-toggle="tooltip"
+                        data-placement="top" title="Remove from wishlist"><i class="far fa-heart"></i></button></a>
+
+                     <% } %>
+                    
                   </div>
 
                 </div>

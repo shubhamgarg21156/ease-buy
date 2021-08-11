@@ -4,6 +4,7 @@ const googleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const crypto = require('crypto');
 const User = require('../models/User');
 const Cart = require('../models/Cart');
+const Wishlist = require('../models/Wishlist');
 const environment = require('./environment');
 passport.use(new googleStrategy({
    
@@ -32,7 +33,9 @@ passport.use(new googleStrategy({
 
                     let cart = await  Cart.create({user : user});
 
-                    let finaluser = await User.findByIdAndUpdate(user._id,{cart:cart});
+                    let wishlist = await Wishlist.create({user : user});
+
+                    let finaluser = await User.findByIdAndUpdate(user._id,{cart:cart , wishlist : wishlist});
                     
                     console.log("User created");
                     

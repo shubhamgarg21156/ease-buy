@@ -1,5 +1,6 @@
 const User = require('../models/User');
 const Cart = require('../models/Cart');
+const Wishlist = require('../models/Wishlist');
 const passport = require('../config/passport-local-strategy');
 const authMailer = require('../mailers/auth_mailer');
 
@@ -64,9 +65,11 @@ try{
 
         let cart = await  Cart.create({user : user});
 
+        let wishlist = await Wishlist.create({user : user});
+
         let randomString = await randString();
 
-        let finaluser = await User.findByIdAndUpdate(user._id,{cart:cart, randomString : randomString});
+        let finaluser = await User.findByIdAndUpdate(user._id,{cart:cart, randomString : randomString , wishlist : wishlist});
 
 
         await authMailer.sendMail(email , randomString);

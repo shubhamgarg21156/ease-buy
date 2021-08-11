@@ -1,6 +1,7 @@
 var passport = require('passport');
 const User = require('../models/User');
 const Cart = require('../models/Cart');
+const wishlist = require('../models/Wishlist');
 var facebookStrategy = require('passport-facebook').Strategy;
 var crypto = require('crypto');
 
@@ -32,7 +33,9 @@ function(accessToken, refreshToken , profile , done){
 
                     let cart = await  Cart.create({user : user});
 
-                    let finaluser = await User.findByIdAndUpdate(user._id,{cart:cart});
+                    let wishlist = await Wishlist.create({user : user});
+
+                    let finaluser = await User.findByIdAndUpdate(user._id,{cart:cart, wishlist : wishlist});
                     
                     console.log("User created");
                     

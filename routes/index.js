@@ -6,7 +6,7 @@ const itemController = require('../controllers/Item_controller');
 const cartController = require('../controllers/cart_controller');
 const checkoutController = require('../controllers/checkout_controller');
 const adminController = require('../controllers/admin_controller');
-
+const wishlistController = require('../controllers/wishlist_controller');
 const passport = require('passport');
 
 router.get('/',homeController.home);
@@ -32,5 +32,8 @@ router.post('/subscribe',homeController.subscribe);
 
 router.post('/message',homeController.message);
 
+
+// Route for wishlist
+router.get('/addtowishlist',passport.checkAuthentication,wishlistController.addtowishlist);
 module.exports = router;
 
