@@ -1,0 +1,108 @@
+body{
+    box-sizing: border-box;
+}
+
+
+.main-div{
+    
+    padding:10px;
+    text-align: center;
+    width:100vw;
+  
+   
+
+}
+
+.admin-heading{
+    color: var(--font-color);
+}
+
+.form{
+    display : flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.category{
+    background:#dfe6e9;;
+    padding: 20px;
+    margin:5px;
+    width: 48vw;
+    text-align: justify;
+    line-height: 1.5;
+    font-weight: 600;
+    font-size: 1.1rem;
+    
+    
+}
+
+.product-detail{
+    
+    background: #dfe6e9;
+    padding: 20px;
+    margin:5px;
+    width: 48vw;
+
+   
+    
+}
+
+
+.admin-p{
+    font:  bold 1.5rem Georgia, serif;
+    color:black;
+   
+   
+}
+
+.btn {
+    width: 100px;
+    /* background-color: #d1fd59; */
+    background-color: black;
+    /* border:none; */
+    color: cornsilk;
+    height: 40px;
+    border-radius: 49px;
+    /* color: black; */
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  
+  .btn:hover {
+    /* background-color: #4d84e2; */
+    background-color: var(--primary-darken);
+
+  }
+
+  .input-box{
+    border: 1px solid black;
+    margin:5px;
+    padding:2px;
+    text-align:center;
+    border-radius: 5px;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: rgb(0, 0, 0);
+  }
+  
+  .input-box::placeholder {
+    color: #aaa;
+    font-weight: 500;
+  }
+
+  @media only screen and (max-width: 600px) {
+
+    .product-detail{
+        width: 100vw;
+    }
+
+    .category{
+        width: 100vw;
+    }
+
+  }

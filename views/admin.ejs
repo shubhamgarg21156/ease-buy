@@ -1,25 +1,44 @@
+<!-- main css -->
+<link rel="stylesheet" href="/css/admin.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <body>
 
-<form action="/admin/addtodb" method="POST">
-    <p>category</p>
-    <input type="radio" name="category" value="shirts" required>Shirts
-    <input type="radio" name="category" value="dresses" required>Dresses
-    <input type="radio" name="category" value="jeans" required>Jeans
-    <input type="radio" name="category" value="shoes" required>Shoes
-    <input type="radio" name="category" value="accesories" required>Accesories
-    <input type="radio" name="category" value="jewellery" required>Jewellery
-    <input type="radio" name="category" value="sweaters" required>Sweaters
-    <input type="radio" name="category" value="hoodies" required>Hoodies
-    <input type="radio" name="category" value="jackets" required>Jackets</br>
+    <div class="main-div">
+        <h2 class="admin-heading">Admin Dashboard</h2>
 
-    <input type="text" name="name" placeholder="name" required>
-    <input type="text" name="image" placeholder="image-link" required>
-    <input type="text" name="zoomedimage" placeholder="zoomedimage-link">
-    <input type="text" name="description" placeholder="description" required>
-    <input type="text" name="price" placeholder="price" required>
-    <input type="text" name="saleprice" placeholder="saleprice">
-    <input type="submit" value="submit">
 
-</form>
+        <form action="/admin/addtodb" method="POST">
+            <div class="form">
+                <div class="category">
+                    <p class="admin-p">Category</p>
+                    <input type="radio" name="category" value="shirts" required>Shirts </br>
+                    <input type="radio" name="category" value="dresses" required>Dresses</br>
+                    <input type="radio" name="category" value="jeans" required>Jeans</br>
+                    <input type="radio" name="category" value="shoes" required>Shoes</br>
+                    <input type="radio" name="category" value="accesories" required>Accesories</br>
+                    <input type="radio" name="category" value="jewellery" required>Jewellery</br>
+                    <input type="radio" name="category" value="sweaters" required>Sweaters</br>
+                    <input type="radio" name="category" value="hoodies" required>Hoodies</br>
+                    <input type="radio" name="category" value="jackets" required>Jackets</br>
+                </div>
+
+                <div class="product-detail">
+                    <p class="admin-p">Product-Details</p>
+                    <input type="text" name="name" placeholder="name" class="input-box" required ></br>
+                    <input type="text" name="image" placeholder="image-link" class="input-box" required></br>
+                    <input type="text" name="zoomedimage" placeholder="zoomed image-link" class="input-box"></br>
+                    <input type="text" name="description" placeholder="description" class="input-box" required></br>
+                    <input type="text" name="price" placeholder="price" class="input-box" required></br>
+                    <input type="text" name="saleprice" placeholder="saleprice" class="input-box" ></br>
+                    <input type="submit" value="submit" class="btn">
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+
+   
 
 </body>

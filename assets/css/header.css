@@ -45,6 +45,7 @@
           height: 18px;
           width: 40px;
           background-color: #111;
+          border: .5px solid white;
           border-radius: 50px;
 
           /* flex property */
