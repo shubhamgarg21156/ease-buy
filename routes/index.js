@@ -4,6 +4,7 @@ const homeController = require('../controllers/home_controller');
 const faqController = require('../controllers/faq_controller');
 const itemController = require('../controllers/Item_controller');
 const cartController = require('../controllers/cart_controller');
+const wishlistController = require('../controllers/wishlist_controller');
 const checkoutController = require('../controllers/checkout_controller');
 const adminController = require('../controllers/admin_controller');
 
@@ -26,8 +27,13 @@ router.use('/auth',require('./auth'));
 // ---- Route for cart ----- //
 router.get('/cart',passport.checkAuthentication,cartController.cart);
 
+// ---- Route for wishlist ----- //
+router.get('/wishlist',passport.checkAuthentication,wishlistController.wishlist);
+
+// ---- Route for checkout ----- //
 router.get('/checkout',checkoutController.checkout);
 
+// ---- Route for subscribe ----- //
 router.post('/subscribe',homeController.subscribe);
 
 router.post('/message',homeController.message);

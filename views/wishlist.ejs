@@ -1,0 +1,82 @@
+
+  <!-- fontawesome link -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+  <title>cart</title>
+  <link rel="stylesheet" href="/css/cart.css">
+
+
+<body>
+  
+  <h2 class="cart-heading">Wishlist<i class="fas fa-heart"></i></h2>
+
+  
+    
+    <h1 class="cart-heading">Your Wishlist is Empty</h1>
+    <img src="/svg_images/emptycart.svg" class="empty-cart-image" alt="" >
+    
+ 
+  <div class="container">
+    <!-- left side  -->
+    <div class="left-container">
+      <!-- first product -->
+
+        
+        <div class="product-card">
+          <div class="image">
+            <img class="cart-img" src="<%=orders[i].product.image%>"
+              alt="Sample">
+  
+          </div>
+          <div class="detail">
+            <div class="product-detail">
+              <h3><%=orders[i].product.name%></h3>
+              <p>Price : ₹<%=orders[i].product.price%></p>
+              <p>Discount : 50%</p>
+              
+              <p class="like-btn"><i class="fas fa-heart"></i> MOVE TO WISH LIST </p>
+              
+            </div>
+          </div>
+  
+  
+          <div class="product-quantity">
+            <div class="quantity-detail">
+              <button  class="minus-btn"> <i class="fas fa-minus"></i> </button>
+              <input id="textbox" class="quantity" min="1" name="quantity" value="<%=orders[i].quantity%>" type="text">
+  
+              <button class="plus-btn" > <i class="fas fa-plus"></i></button>
+  
+            </div>
+  
+            <div class="remove">
+              <button><a href="/removeItem/?id=<%= orders[i]._id%>"><i class="fas fa-trash-alt mr-1"></i>
+                Remove Item </a></button>
+            </div>
+  
+          </div>
+        </div>
+
+
+      <% }%>
+    
+
+    </div>
+   
+      <a href="/cart" target="_blank"> <button >Add to Cart</button></a>
+     
+    </div>
+
+
+  </div>
+
+  <% } %>
+
+  <!-- javascript -->
+<script src="/Javascript/cart.js"></script>
+
+</body>
+
