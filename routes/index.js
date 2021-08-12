@@ -14,7 +14,7 @@ router.get('/',homeController.home);
 router.get('/addtocart',passport.checkAuthentication,itemController.makeOrder);
 router.get('/removeItem',passport.checkAuthentication,itemController.removeItem);
 router.get('/product',itemController.openProduct);
-router.get('/categories',itemController.categories);
+router.get('/categories',passport.checkAuthentication,itemController.categories);
 router.get('/admin',adminController.admin);
 router.post('/admin/addtodb',adminController.addtodb);
 router.get('/faq',faqController.faq);
