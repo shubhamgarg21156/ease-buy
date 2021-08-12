@@ -1,7 +1,7 @@
 
 
 // $('.like-btn').on('click', function() {
-//     $(this).toggleClass("red");
+//     $(this).toggleClass("blue");
 //  });
 
  $('.minus-btn').on('click', function(e) {

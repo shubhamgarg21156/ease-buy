@@ -1,0 +1,63 @@
+  <!-- fontawesome link -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+  <title>Wishlist</title>
+  <link rel="stylesheet" href="/css/wishlist.css">
+
+
+<body>
+  <h2 class="cart-heading">Wishlist<i class="fas fa-shopping-cart"></i></h2>
+  <% if(items.length==0){ %>
+    
+    <h1 class="cart-heading">Your Wishlist is Empty</h1>
+    <img src="/svg_images/emptycart.svg" class="empty-cart-image" alt="" >
+    
+  <% }else {%>
+  <div class="container">
+    <!-- left side  -->
+    <div class="left-container">
+      <!-- first product -->
+
+      <% for(let i=0;i<items.length;i++) { %>
+        
+        <div class="product-card">
+          <div class="image">
+            <img class="cart-img" src="<%=items[i].image%>" alt="Sample">
+          </div>
+          <div class="detail">
+            <div class="product-detail">
+              <h3><%=items[i].name%></h3>
+              <p class="price" >Price : ₹<%=items[i].price%></p>
+              
+              <% if(cartproducts.includes(items[i]._id.toString())){%>
+                <a class="like-btn-link" href="/removeItem/?id=<%=items[i]._id%>"><p class="like-btn blue"><i class="fas fa-heart"></i> Remove from cart</p> </a>         
+              <% }else{ console.log(cartproducts[1])%> 
+                <a class="like-btn-link" href="/addtocart/?id=<%=items[i]._id%>"><p class="like-btn"><i class="fas fa-heart"></i> Add to cart</p> </a> 
+              <% } %>
+                          
+            </div>
+          </div>
+   
+          <div class="product-quantity">
+            <div class="remove">
+              <button><a href="/addtowishlist/?id=<%= items[i]._id%>"><i class="fas fa-trash-alt mr-1"></i>
+                Remove from wishlist  </a></button>
+            </div>
+          </div>
+        </div>
+
+
+      <% }%>
+    </div>
+  </div>
+
+  <% } %>
+
+  <!-- javascript -->
+<script src="/Javascript/wishlist.js"></script>
+
+</body>
+

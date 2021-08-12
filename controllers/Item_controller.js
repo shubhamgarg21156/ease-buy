@@ -1,6 +1,7 @@
 const Product = require('../models/Product');
 const Order= require('../models/Order');
 const Cart = require('../models/Cart');
+const Wishlist = require('../models/Wishlist');
 
 module.exports.makeOrder = (req,res) => {
 
@@ -67,9 +68,8 @@ module.exports.makeOrder = (req,res) => {
 
 module.exports.removeItem = (req,res) => {
 
-    var order_id = req.query.id;
     
-    Order.findById(order_id,async (err,order) => {
+    Order.findOne({product : req.query.id, user : req.user.id},async (err,order) => {
 
         if(err){
             req.flash('error','Some error occured');
@@ -77,8 +77,7 @@ module.exports.removeItem = (req,res) => {
             return res.redirect('back');
         }
 
-        
-        Cart.findByIdAndUpdate(req.user.cart._id,{$pull : {orders : order_id}},function(err,cart){
+        Cart.findByIdAndUpdate(req.user.cart._id,{$pull : {orders : order._id}},function(err,cart){
 
             if(err){
                 req.flash('error','Some error occured');
@@ -107,17 +106,22 @@ module.exports.openProduct = (req,res) => {
     
 }
 module.exports.categories = (req,res) => {
-    Product.find({category : req.query.type}, (err,product) => {
+    Wishlist.findOne({user: req.user.id} , (err,wishlist)=> {
 
-        if(err){
-            req.flash('error','Some error occured');
-            console.log('Error in loading categories page');
-            return res.redirect('back');
-        }
+        Product.find({category : req.query.type}, (err,product) => {
 
-        return res.render('categories' , {
-            product : product
-        });
+            if(err){
+                req.flash('error','Some error occured');
+                console.log('Error in loading categories page');
+                return res.redirect('back');
+            }
+    
+            return res.render('categories' , {
+                product : product,
+                wishlist : wishlist
+            });
+    
+        })
 
     })
     

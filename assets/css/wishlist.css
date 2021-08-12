@@ -50,14 +50,14 @@
 
 }
 
-.red{
-    color:red;
+.blue{
+    color:blue;
 }
 
 .like-btn-link{
     text-decoration: none;
-    color:black}
-
+    color:black;
+}
 .cart-img{
     width: 300px;
 	height: 200px;

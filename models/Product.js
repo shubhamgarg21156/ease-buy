@@ -31,10 +31,6 @@ const ProductSchema = new mongoose.Schema({
           },
           saleprice : {
               type:String,
-          },
-          iswishlist : {
-              type : Boolean,
-              default : false
           }
     
 },{timestamps:true});

@@ -34,6 +34,7 @@ router.post('/message',homeController.message);
 
 
 // Route for wishlist
+router.get('/wishlist',passport.checkAuthentication,wishlistController.wishlist);
 router.get('/addtowishlist',passport.checkAuthentication,wishlistController.addtowishlist);
 module.exports = router;
 
