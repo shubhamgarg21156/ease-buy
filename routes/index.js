@@ -7,7 +7,6 @@ const cartController = require('../controllers/cart_controller');
 const wishlistController = require('../controllers/wishlist_controller');
 const checkoutController = require('../controllers/checkout_controller');
 const adminController = require('../controllers/admin_controller');
-const wishlistController = require('../controllers/wishlist_controller');
 const passport = require('passport');
 
 router.get('/',homeController.home);
@@ -27,8 +26,6 @@ router.use('/auth',require('./auth'));
 // ---- Route for cart ----- //
 router.get('/cart',passport.checkAuthentication,cartController.cart);
 
-// ---- Route for wishlist ----- //
-router.get('/wishlist',passport.checkAuthentication,wishlistController.wishlist);
 
 // ---- Route for checkout ----- //
 router.get('/checkout',checkoutController.checkout);

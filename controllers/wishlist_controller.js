@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const Product = require('../models/Product');
 const Wishlist = require('../models/Wishlist');
 const Cart = require('../models/Cart');
@@ -83,27 +82,3 @@ module.exports.addtowishlist = async (req,res) => {
         })
     })
 }
-=======
-
-
-module.exports.wishlist = (req,res) => {
-    
-    // wishlist.find({user : req.user._id}).populate({
-    //     path : 'orders',
-    //     populate : {
-    //         path : 'product'
-    //     }
-    // }).exec(async function(err,cart)
-    // {
-    //     res.render('wishlist',{
-    //         title : 'wishlist',
-           
-    //     });
-    //  });
-
-
-    res.render('wishlist',{
-            title : 'wishlist',
-        });
-}
->>>>>>> a08f5c6a3cd6e52ae8a99808725b552c79c1051a

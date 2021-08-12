@@ -19,6 +19,11 @@
       height: 85vh;
       object-fit: contain; }
 
+  @media (max-width : 624px){
+    .slider .image img{
+        height : 40vh;
+    }
+  }
 .featured-products-div {
   height: auto;
   margin-top: 60px; }
