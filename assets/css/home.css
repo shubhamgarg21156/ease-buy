@@ -5,7 +5,7 @@
   color: var(--font-color);
 }
 
-nav {
+.navbar {
   position: fixed !important; }
 
 .slider {

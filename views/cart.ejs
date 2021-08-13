@@ -1,97 +1,104 @@
+<!-- fontawesome link -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 
-  
-
-  <!-- fontawesome link -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
-  <title>cart</title>
-  <link rel="stylesheet" href="/css/cart.css">
+<title>cart</title>
+<link rel="stylesheet" href="/css/cart.css">
 
 
 <body>
-  <% var price = 0;%>
-  <h2 class="cart-heading">Shopping-cart<i class="fas fa-shopping-cart"></i></h2>
+  <% var price=0;%>
+    <h2 class="cart-heading">Shopping-cart<i class="fas fa-shopping-cart"></i></h2>
 
-  <% if(orders.length==0){ %>
-    
-    <h1 class="cart-heading">Your Cart is Empty</h1>
-    <img src="/svg_images/emptycart.svg" class="empty-cart-image" alt="" >
-    
-  <% }else {%>
-  <div class="container">
-    <!-- left side  -->
-    <div class="left-container">
-      <!-- first product -->
+    <% if(orders.length==0){ %>
+
+      <h1 class="cart-heading">Your Cart is Empty</h1>
+      <img src="/svg_images/emptycart.svg" class="empty-cart-image" alt="">
+
+      <% }else {%>
+        <div class="container">
+          <!-- left side  -->
+          <div class="left-container">
+            <!-- first product -->
 
 
-      <% for(let i=0;i<orders.length;i++) { price+=Number(orders[i].product.price) %>
-        
-        <div class="product-card">
-          <div class="image">
-            <img class="cart-img" src="<%=orders[i].product.image%>"
-              alt="Sample">
-  
+            <% for(let i=0;i<orders.length;i++) { price+=Number(orders[i].product.price) %>
+
+              <div class="product-card">
+                <div class="image">
+                  <img class="cart-img" src="<%=orders[i].product.image%>" alt="Sample">
+
+                </div>
+                <div class="detail">
+                  <div class="product-detail">
+                    <h3>
+                      <%=orders[i].product.name%>
+                    </h3>
+                    <p class="price">Price : ₹<%=orders[i].product.price%>
+                    </p>
+                    <p>Category : <%= orders[i].product.category %>
+                    </p>
+                    <% if(wishlist.products.includes(orders[i].product._id)){ %>
+                      <a class="like-btn-link" href="/addtowishlist/?id=<%=orders[i].product._id%>">
+                        <p class="like-btn red"><i class="fas fa-heart"></i> REMOVE FROM WISH LIST </p>
+                      </a>
+                      <% }else{ %>
+                        <a class="like-btn-link" href="/addtowishlist/?id=<%=orders[i].product._id%>">
+                          <p class="like-btn"><i class="fas fa-heart"></i> MOVE TO WISH LIST </p>
+                        </a>
+                        <% } %>
+
+
+                  </div>
+                </div>
+
+
+                <div class="product-quantity">
+                  <div class="quantity-detail">
+                    <button class="minus-btn"> <i class="fas fa-minus"></i> </button>
+                    <input id="textbox" class="quantity" min="1" name="quantity" value="<%=orders[i].quantity%>"
+                      type="text">
+
+                    <button class="plus-btn"> <i class="fas fa-plus"></i></button>
+
+                  </div>
+
+                  <div class="remove">
+                    <button><a href="/removeItem/?id=<%= orders[i].product._id%>"><i class="fas fa-trash-alt mr-1"></i>
+                        Remove Item </a></button>
+                  </div>
+
+                </div>
+              </div>
+
+
+              <% }%>
+
+
           </div>
-          <div class="detail">
-            <div class="product-detail">
-              <h3><%=orders[i].product.name%></h3>
-              <p class="price" >Price : ₹<%=orders[i].product.price%></p>
-              <p>Category : <%= orders[i].product.category %></p>
-              <% if(wishlist.products.includes(orders[i].product._id)){ %>
-                <a class="like-btn-link" href="/addtowishlist/?id=<%=orders[i].product._id%>"><p class="like-btn red"><i class="fas fa-heart"></i> REMOVE FROM WISH LIST </p></a>
-              <% }else{ %>
-                <a class="like-btn-link" href="/addtowishlist/?id=<%=orders[i].product._id%>"><p class="like-btn"><i class="fas fa-heart"></i> MOVE TO WISH LIST </p></a>
-              <% } %>
-              
-              
-            </div>
-          </div>
-  
-  
-          <div class="product-quantity">
-            <div class="quantity-detail">
-              <button  class="minus-btn"> <i class="fas fa-minus"></i> </button>
-              <input id="textbox" class="quantity" min="1" name="quantity" value="<%=orders[i].quantity%>" type="text">
-  
-              <button class="plus-btn" > <i class="fas fa-plus"></i></button>
-  
-            </div>
-  
-            <div class="remove">
-              <button><a href="/removeItem/?id=<%= orders[i].product._id%>"><i class="fas fa-trash-alt mr-1"></i>
-                Remove Item </a></button>
-            </div>
-  
-          </div>
-        </div>
+          <div class="cart-total">
 
+            <p>
 
-      <% }%>
-    
+              <span>Total Price</span>
 
-    </div>
-    <div class="cart-total">
+              <span>₹ <%= price %></span>
 
-      <p>
+            </p>
 
-        <span>Total Price</span>
+            <p>
 
-        <span>₹ <%= price %></span>
+              <span>Number of Items</span>
 
-      </p>
+              <span>
+                <%= orders.length%>
+              </span>
 
-      <p>
+            </p>
 
-        <span>Number of Items</span>
-
-        <span><%= orders.length%></span>
-
-      </p>
-
-      <!-- <p>
+            <!-- <p>
 
         <span>You Save</span>
 
@@ -99,17 +106,16 @@
 
 
       </p> -->
-      <a href="/checkout" target="_blank"> <button >Proceed to Checkout</button></a>
-     
-    </div>
+            <a href="/checkout" target="_blank"> <button>Proceed to Checkout</button></a>
+
+          </div>
 
 
-  </div>
+        </div>
 
-  <% } %>
+        <% } %>
 
-  <!-- javascript -->
-<script src="/Javascript/cart.js"></script>
+          <!-- javascript -->
+          <script src="/Javascript/cart.js"></script>
 
 </body>
-

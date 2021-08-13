@@ -89,3 +89,15 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: #888; }
+
+
+  @media(max-width:800px){
+
+    
+   .slider{
+    margin-top:50px;
+   }
+
+
+
+  }
