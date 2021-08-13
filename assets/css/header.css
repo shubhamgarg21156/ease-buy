@@ -141,7 +141,7 @@ nav {
         transition: all 0.7s ease;
     }
     .nav-links{
-        position: fixed;
+        /* position: fixed; */
         background:var(--bg-color);
        
         height: 100vh;
@@ -183,4 +183,30 @@ nav {
   }
 
 
+}
+
+@media screen and (max-width: 1600px){
+  .contact{
+    margin-right : 600px;
+  }
+}
+@media screen and (max-width: 1400px){
+    .contact{
+      margin-right : 400px;
+    }
+}
+ @media screen and (max-width: 1196px){
+      .contact{
+        margin-right : 300px;
+      }
+    }
+@media screen and (max-width: 1089px){
+        .contact{
+          margin-right : 100px;
+        }
+      } 
+@media screen and (max-width: 893px){
+        .contact{
+          margin-right : 50px;
+        }
 }
