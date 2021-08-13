@@ -164,13 +164,10 @@ nav {
 @media screen and (min-width: 800px){
   .nav-links  li {
     padding: 20px;
-    
-    
-
     cursor: pointer; 
   }
   .theme{
-    margin-right:50px;
+    margin-right:60px;
   }
 
   .item1{
