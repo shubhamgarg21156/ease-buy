@@ -2,7 +2,7 @@
 body{
   overflow-x: hidden;
 }
-nav {
+.navbar {
   height: 80px;
   display: flex;
   /* justify-content: space-around;
@@ -44,6 +44,7 @@ nav {
          /*----------------theme selector------------------*/
         #theme-selector{
           margin-left: 30px;
+          margin-top: 7px;
 
         }
 
@@ -127,9 +128,9 @@ nav {
 
 /*Stying for small screens*/
 @media screen and (max-width: 800px){
-    nav{
+    .navbar{
         position: fixed;
-        z-index: 3;
+        z-index: 3000;
     }
     .hamburger{
         display:block;
@@ -144,6 +145,7 @@ nav {
     .nav-links{
         /* position: fixed; */
         background:var(--bg-color);
+       
        
         height: 100vh;
         width: 100%;
@@ -165,12 +167,9 @@ nav {
 @media screen and (min-width: 800px){
   .nav-links  li {
     padding: 20px;
-    
-    
-
     cursor: pointer; 
   }
-  .theme{
+  .last{
     /* margin-right:50px; */
   }
 
@@ -208,6 +207,7 @@ nav {
       } 
 @media screen and (max-width: 893px){
         .contact{
-          margin-right : 50px;
+          margin-right : 0;
+       
         }
 }

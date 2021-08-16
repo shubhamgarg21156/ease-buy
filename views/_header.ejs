@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/css/header.css">
-<nav>
+<nav class="navbar">
     <div class="hamburger">
         <div class="line1"></div>
         <div class="line2"></div>
@@ -28,7 +28,7 @@
         <li class="item"><a href="/cart"><i class="fas fa-cart-plus"></i></a></li>
         <li class="item"><a href="/wishlist"><i class="fas fa-heart"></i></a></li>
       
-        <li id="theme-selector" class="item theme">
+        <li id="theme-selector" class="item last theme">
             <input type="checkbox" class="checkbox" id="chkbox" />
             <label class="label" for="chkbox">
                 <i class="fas fa-moon fa-xs"></i>
@@ -52,9 +52,9 @@ const links = document.querySelectorAll(".nav-links li");
 hamburger.addEventListener('click', ()=>{
    //Animate Links
     navLinks.classList.toggle("open");
-    links.forEach(link => {
-        link.classList.togle("fade");
-    });
+    // links.forEach(link => {
+    //     link.classList.togle("fade");
+    // });
 
     //Hamburger Animation
     hamburger.classList.toggle("toggle");

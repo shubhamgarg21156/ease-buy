@@ -65,8 +65,9 @@
     color:black;
 }
 .cart-img{
-    width: 300px;
-	height: 200px;
+    width: 200px;
+    background: rgb(238, 195, 195);
+	border-radius: 50%;
 	object-fit: cover;
 }
 
@@ -169,6 +170,14 @@ background-color: cornsilk;
     }
 }
 
+
+
+
+@media screen and (max-width: 800px){
+    .cart-heading{
+       margin-top: 100px;
+    }
+}
 
 
 

@@ -15,7 +15,8 @@ module.exports.cart = (req,res) => {
             res.render('cart',{
                 title : 'cart',
                 orders : cart[0].orders,
-                wishlist : wishlist
+                wishlist : wishlist,
+               
             });
         });
 

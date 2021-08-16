@@ -1,5 +1,11 @@
     <title>Checkout </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      .stripe-button{
+        margin-left:100px;
+        padding:50px;
+      }
+    </style>
 
   <!-- <body   style="background-color: rgb(238, 232, 200);"> -->
     <body>
@@ -46,7 +52,8 @@
             </li>
           </ul>
 
-          <form class="card p-2">
+          <!-- <form class="card p-2" > -->
+            <form class="card p-2" action="payment" method="POST">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Promo code">
               <div class="input-group-append">
@@ -165,7 +172,7 @@
                 <label class="custom-control-label" for="paypal"  style="color: var(--font-color); ">PayTm</label>
               </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="cc-name" style="color: var(--font-color); ">Name on card</label>
                 <input type="text" class="form-control" id="cc-name" placeholder="" required>
@@ -197,10 +204,28 @@
                   Security code required
                 </div>
               </div>
-            </div>
+            </div> -->
             <hr class="mb-4" style="background-color: var(--font-color); ">
-            <button class="btn btn-primary btn-lg btn-block mb-5" type="submit">Continue to checkout</button>
-          </form>
+           
+            <!-- <form action="payment" method="POST"> -->
+            
+              <script 
+                 src="//checkout.stripe.com/v2/checkout.js"
+                 class="stripe-button"
+                 data-key="<%= key %>"
+                 data-amount="80000"
+                 data-currency="inr"
+                 data-name="Easy-Buy"
+                 data-description="shopping made easy"
+                 data-locale="auto" >
+               </script>
+              
+           <!-- </form> -->
+
+          
+            
+    </form> 
+          <!-- </form> -->
         </div>
       </div>
     </div>

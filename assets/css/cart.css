@@ -154,17 +154,43 @@ background-color: cornsilk;
     width: 400px;
     background:#fff;
     border-radius: 10px;
-   
-   
-
 }
 
 
+@media(max-width:500px){
+    .empty-cart-image{
+        width:150px;
+    }
+    .left-container{
+        padding: 20px;;
+    }
+    
+}
+@media(max-width:800px){
+    .cart-heading{
+        margin-top: 100px;
+    }
+   
+    
+}
 
-@media screen and (max-width: 992px){
+
+@media screen and (max-width: 1100px){
     .detail{
         display: none;
     }
+    input{
+        width:20px;
+
+    }
+    .product-quantity{
+        width:80px;
+        margin-left: 15px;
+    }
+    .cart-total{
+        flex:0.75;
+    }
+    
 }
 
 
