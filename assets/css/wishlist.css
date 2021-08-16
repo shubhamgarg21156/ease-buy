@@ -12,6 +12,12 @@
 
 }
 
+@media screen and (max-width:800px){
+    .cart-heading{
+        margin-top:100px;
+    }
+}
+
 .container{
     display: flex;
     /* background-color: chartreuse; */
