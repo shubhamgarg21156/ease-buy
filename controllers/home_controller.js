@@ -10,7 +10,8 @@ module.exports.home = async (req,res) => {
         res.render('home',{
             title : 'Home Page',
             products: products,
-            newproducts : newproducts
+            newproducts : newproducts,
+            key: 'pk_test_51JOmPHSDqMOPiqRGxjtLYGKq595kkYuIFFyxbiIDeJiOtI8qzUkfoNbecKWFupkIXk2wPHddEqIWjpX86NLA2hSz00wA2eAIGO'
         });
 
     })
